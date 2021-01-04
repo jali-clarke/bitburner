@@ -1,4 +1,4 @@
-export async main(ns){
+export async function main(ns){
     ns.tprint(ns.args)
     if(ns.args.length != 1){
         ns.tprint("expected exactly one argument");
