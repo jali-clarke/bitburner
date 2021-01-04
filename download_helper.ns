@@ -1,5 +1,6 @@
+let downloadUrlBase = "https://raw.githubusercontent.com/jali-clarke/bitburner-scripts/master";
+
 export async function main(ns){
-    ns.tprint(ns.args)
     if(ns.args.length != 1){
         ns.tprint("expected exactly one argument");
         ns.exit();
@@ -7,4 +8,6 @@ export async function main(ns){
 
     let scriptName = ns.args[0];
     ns.tprint("downloading script from jali-clarke/bitburner: " + scriptName);
+    await ns.wget(downloadUrlBase + "/" + scriptName, scriptName);
+    ns.tprint("done!")
 }
