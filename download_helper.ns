@@ -1,0 +1,10 @@
+export async main(ns){
+    ns.tprint(ns.args)
+    if(ns.args.length != 1){
+        ns.tprint("expected exactly one argument");
+        ns.exit();
+    }
+
+    let scriptName = ns.args[0];
+    ns.tprint("downloading script from jali-clarke/bitburner: " + scriptName);
+}
